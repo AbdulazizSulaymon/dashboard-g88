@@ -6,12 +6,23 @@ const ContainerWrapper = styled.div`
     display: flex;
 
     .sidebar{
-            width: 300px;
-            padding: ${padding};
+            width: auto;
+            min-width: 0;
+            max-width: 300px;
+            padding:${padding};
+            /* padding-top: ${padding};
+            padding-bottom: ${padding}; */
+            overflow: hidden;
             background-color: #aaa;
             height: 100vh;
             position: sticky;
             top: 0;
+            transition: 1s;
+
+            &.show{
+                min-width: 300px;
+                /* padding: ${padding}; */
+            }
 
             ul.menu{
                 li{
